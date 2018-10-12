@@ -26,7 +26,7 @@ halfHeight :: Float
 halfHeight = fromIntegral height / 2
 
 wallColor :: Color
-wallColor = black
+wallColor = green
 
 topWall :: Picture
 topWall = translate 0 halfHeight
@@ -54,7 +54,7 @@ renderTxt col value = scale 0.3 0.3
 
 curMsg :: Int -> Bool -> Picture
 curMsg    0  paused = pauseMsg paused
-curMsg (-1) paused = lostMsg
+curMsg  (-1) paused = lostMsg
 curMsg    _  paused = winnMsg
 
 winnMsg   = renderTxt green "You won! (r = new game)"
